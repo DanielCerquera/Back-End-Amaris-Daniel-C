@@ -5,6 +5,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 @Table(name = "employees")
@@ -13,10 +14,12 @@ public class Employe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String  employee_name;
+    private String employee_name;
     private Long employee_salary;
     private Long employee_age;
     private String profile_image;
+
+    private Long employee_anual_salary;
 
     public Long getId() {
         return id;
@@ -57,5 +60,16 @@ public class Employe {
     public void setProfile_image(String profile_image) {
         this.profile_image = profile_image;
     }
+
+    public Long getEmployee_anual_salary() {
+        return employee_anual_salary;
+    }
+
+    public void setEmployee_anual_salary(Long employee_anual_salary) {
+        this.employee_anual_salary = employee_anual_salary;
+    }
+
+
+
 }
 

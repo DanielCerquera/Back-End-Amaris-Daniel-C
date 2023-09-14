@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("api/v1/employe")
 public class EmployeController {
 
@@ -30,6 +31,7 @@ public class EmployeController {
         employeService.deleteEmploye(id);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/{id}")
     public void updateEmployeById(@PathVariable("id") Long id, @RequestBody Employe employe) {
         employeService.updateEmploye(id, employe.getEmployee_name(), employe.getEmployee_salary(), employe.getEmployee_age(), employe.getProfile_image());
